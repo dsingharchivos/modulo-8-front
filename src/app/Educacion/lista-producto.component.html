@@ -1,0 +1,27 @@
+<table class="table table-white" >
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Centro</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Año Ingreso</th>
+        <th scope="col">Año Egreso</th>
+        </tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor="let producto of productos">
+        <td>{{producto.id}}</td>
+        <td>{{producto.centro}}</td>
+        <td>{{producto.titulo}}</td>
+        <td>{{producto.anio_ingreso}}</td>
+        <td>{{producto.anio_egreso}}</td>
+        
+        <td><button class="btn btn-outline-warning" routerLink="/editar/{{producto.id}}"><i class="far fa-edit"></i> Editar</button></td>
+        <td><button class="btn btn-outline-danger" (click)="borrar(producto.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
+       
+      </tr>
+
+      
+    </tbody>
+  </table>
